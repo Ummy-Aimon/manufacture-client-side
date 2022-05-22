@@ -22,13 +22,14 @@ const Header = () => {
       <Nav.Link as={Link} to="/" href="#home">Home</Nav.Link>
       <Nav.Link href="#about">About Us</Nav.Link>
       <Nav.Link href="#tools">paintTools</Nav.Link>
-      <Nav.Link href="#gallary">Gallary</Nav.Link>
+      <Nav.Link href="#review">Review</Nav.Link>
       <Nav.Link href="#contact">Contact Us</Nav.Link>
       <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <NavDropdown.Item as={Link} to="/service" href="#service">Service</NavDropdown.Item>
         <NavDropdown.Item as={Link} to="/achievement" href="#achievement">Achievement</NavDropdown.Item>
-        <NavDropdown.Item as={Link} to="/review" href="#review">Review</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/gallary" href="#review">Gallary</NavDropdown.Item>
         <NavDropdown.Item as={Link}to="/team" href="#team">Team</NavDropdown.Item>
+        <NavDropdown.Item as={Link}to="/blog" href="#blog">Blog</NavDropdown.Item>
         <NavDropdown.Divider />
       </NavDropdown>
     </Nav>
