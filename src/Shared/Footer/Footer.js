@@ -51,6 +51,7 @@ const Footer1 = () => {
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+
                 </div>
                 <p className="fw-bold">© 2022 Roxce All Rights Reserved</p>
             </div>
