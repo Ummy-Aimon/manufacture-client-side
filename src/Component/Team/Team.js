@@ -34,7 +34,7 @@ const Team = () => {
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
-<Card.Img variant="top" className="" src={team1} />
+<Card.Img variant="" className="" src={team1} />
   <Card.Body>
     <Card.Title>Shahnewaz Sakil</Card.Title>
     <Card.Text>
@@ -47,7 +47,7 @@ const Team = () => {
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
-<Card.Img variant="top" className="" src={team2} />
+<Card.Img variant="" className="" src={team2} />
   <Card.Body>
     <Card.Title>Shahnewaz Sakil</Card.Title>
     <Card.Text>
@@ -60,7 +60,7 @@ const Team = () => {
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
-<Card.Img variant="top" className="" src={team3} />
+<Card.Img variant="" className="" src={team3} />
   <Card.Body>
     <Card.Title>Shahnewaz Sakil</Card.Title>
     <Card.Text>
@@ -73,7 +73,7 @@ const Team = () => {
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
-<Card.Img variant="top" className="" src={team4} />
+<Card.Img variant="" className="" src={team4} />
   <Card.Body>
     <Card.Title>Shahnewaz Sakil</Card.Title>
     <Card.Text>
@@ -86,7 +86,7 @@ const Team = () => {
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
-<Card.Img variant="top" className="" src={team5} />
+<Card.Img variant="" className="" src={team5} />
   <Card.Body>
     <Card.Title>Shahnewaz Sakil</Card.Title>
     <Card.Text>
