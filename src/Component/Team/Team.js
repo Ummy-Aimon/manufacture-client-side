@@ -2,8 +2,12 @@ import React from 'react';
 
 const Team = () => {
     return (
-        <div>
-            <h2>Our Team</h2>
+        <div className="info">
+           <div  className="title-text">
+              <h1 className="title">Our Team</h1>
+              <p className="fw-bold text-warning">Meet The Expart Team</p>
+              </div>
+              
         </div>
     );
 };

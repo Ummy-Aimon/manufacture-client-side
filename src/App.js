@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Achievement from './Component/Achievement/Achievement';
+import Gallary from './Component/Gallary/Gallary';
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
@@ -24,6 +25,7 @@ function App() {
          <Route path="/team" element={<Team></Team>}></Route>
          <Route path="/login" element={<Login></Login>}></Route>
          <Route path="/signup" element={<SignUp></SignUp>}></Route>
+         <Route path="/gallary" element={<Gallary></Gallary>}></Route>
          <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     <Footer1></Footer1>
