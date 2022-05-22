@@ -6,6 +6,9 @@
     border-bottom: 2px solid lightcoral;
  
 }
+.about{
+    min-height: 750px;
+}
 .title-text{
  text-align: center;
 }

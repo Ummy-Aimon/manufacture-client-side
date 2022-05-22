@@ -7,6 +7,8 @@ import Review from './Component/Review/Review';
 import Service from './Component/Service/Service';
 import SignUp from './Component/SignUp/SignUp';
 import Team from './Component/Team/Team';
+import Footer1 from './Shared/Footer/Footer';
+// import Footer1 from './Shared/Footer/Footer';
 import Homepage from './Shared/HomePage/Homepage';
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
          <Route path="/login" element={<Login></Login>}></Route>
          <Route path="/signup" element={<SignUp></SignUp>}></Route>
       </Routes>
+    <Footer1></Footer1>
     </div>
   );
 }
