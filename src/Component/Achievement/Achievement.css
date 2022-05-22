@@ -1,0 +1,6 @@
+.info{
+    min-height: 750px;
+}
+.countdown {
+    --value: 1000;
+}

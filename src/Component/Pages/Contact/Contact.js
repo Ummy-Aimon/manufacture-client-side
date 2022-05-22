@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FloatingLabel, Form } from 'react-bootstrap';
+import { Button,Form } from 'react-bootstrap';
 import {AiOutlineArrowRight} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import contact from "../../../image/contact-1.jpg"
@@ -22,14 +22,14 @@ const Contact = () => {
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Control type="email" placeholder="Enter Your email" />
   </Form.Group>
-  <FloatingLabel controlId="floatingTextarea2" label="Your Message">
+  <Form.Group controlId="floatingTextarea2" label="Your Message">
     <Form.Control
       as="textarea"
       placeholder="Your Message"
       style={{ height: '100px' }}
     />
     <br></br>
-  </FloatingLabel>
+  </Form.Group>
   <Button as={Link}  to="/gallary" variant="warning" type="submit">
     Send Message <AiOutlineArrowRight></AiOutlineArrowRight>
   </Button>
