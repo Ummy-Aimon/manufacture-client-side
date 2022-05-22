@@ -23,7 +23,7 @@ const Banner = () => {
     </Hero>
                    </div>
                    <div className="col-md-6">
-                       <img className="h-100 mt-5" src={banner}alt="" />
+                       <img className="w-100 mt-5" src={banner}alt="" />
                        </div>
                </div>
                </div> 

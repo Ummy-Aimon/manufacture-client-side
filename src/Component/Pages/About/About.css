@@ -1,0 +1,11 @@
+.title{
+    margin-top: 40px;
+    color: rgb(241, 104, 104);
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 2px solid lightcoral;
+ 
+}
+.title-text{
+ text-align: center;
+}
