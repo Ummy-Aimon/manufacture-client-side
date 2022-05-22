@@ -25,7 +25,7 @@ const Achievement = () => {
       <Hero.Overlay className="bg-opacity-60" />
       <Hero.Content className="text-center">
         <div className="max-w-md">
-          <h1 className="text-5xl text-warning font-bold">Painting Services Achievement</h1>
+          <h1 className="text-5xl text-warning fw-bold">Painting Services Achievement</h1>
           <p className="py-6">
           A paintbrush is a brush used to apply paint or ink. A paintbrush is usually made by clamping bristles to a handle with a ferrule. They are available in various sizes, shapes, and materials. Thicker ones are used for filling in, and thinner ones are used for details.
           </p>
@@ -62,14 +62,14 @@ const Achievement = () => {
     <div className="col-md-3">
   <Card.Img className="w-50 mt-4" variant="top" src={achieve2} />
   <Card.Body>
-      <h4>2029</h4>
+      <h4>3000</h4>
     <Card.Title>Awards Winning</Card.Title>
   </Card.Body>
     </div>
     <div className="col-md-3">
   <Card.Img className="w-50 mt-4" variant="top" src={achieve3} />
   <Card.Body>
-      <h4>2029</h4>
+      <h4>500+</h4>
     <Card.Title>Feedback</Card.Title>
   </Card.Body>
   </div>

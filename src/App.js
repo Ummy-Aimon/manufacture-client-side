@@ -3,6 +3,7 @@ import './App.css';
 import Achievement from './Component/Achievement/Achievement';
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
+import NotFound from './Component/NotFound/NotFound';
 import Review from './Component/Review/Review';
 import Service from './Component/Service/Service';
 import SignUp from './Component/SignUp/SignUp';
@@ -23,6 +24,7 @@ function App() {
          <Route path="/team" element={<Team></Team>}></Route>
          <Route path="/login" element={<Login></Login>}></Route>
          <Route path="/signup" element={<SignUp></SignUp>}></Route>
+         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     <Footer1></Footer1>
     </div>
