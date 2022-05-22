@@ -36,7 +36,7 @@ const Team = () => {
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team1} />
   <Card.Body>
-    <Card.Title>Shahnewaz Sakil</Card.Title>
+    <Card.Title>Julian Carter</Card.Title>
     <Card.Text>
     Commercial Painter
     </Card.Text>
@@ -49,7 +49,7 @@ const Team = () => {
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team2} />
   <Card.Body>
-    <Card.Title>Shahnewaz Sakil</Card.Title>
+    <Card.Title>Michel Jhon Menda</Card.Title>
     <Card.Text>
     Commercial Painter
     </Card.Text>
@@ -62,7 +62,7 @@ const Team = () => {
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team3} />
   <Card.Body>
-    <Card.Title>Shahnewaz Sakil</Card.Title>
+    <Card.Title>Somalia XD Silova</Card.Title>
     <Card.Text>
     Commercial Painter
     </Card.Text>
@@ -75,7 +75,7 @@ const Team = () => {
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team4} />
   <Card.Body>
-    <Card.Title>Shahnewaz Sakil</Card.Title>
+    <Card.Title>Samuel Joseph</Card.Title>
     <Card.Text>
     Commercial Painter
     </Card.Text>
@@ -88,7 +88,7 @@ const Team = () => {
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team5} />
   <Card.Body>
-    <Card.Title>Shahnewaz Sakil</Card.Title>
+    <Card.Title>Sebastian Sebastian</Card.Title>
     <Card.Text>
     Commercial Painter
     </Card.Text>
