@@ -7,7 +7,7 @@ import './Contact.css'
 
 const Contact = () => {
     return (
-        <div className="contact">
+        <div id="contact" className="contact">
             <div  className="title-text">
               <h1 className="title">Get In Touch</h1>
               <p className="fw-bold text-warning">Don't Hesited To Conatct With Roxce</p>
