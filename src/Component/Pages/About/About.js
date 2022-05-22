@@ -13,7 +13,7 @@ const About = () => {
             <div className="container">
             <div className="row">
             <div className="col-md-6">   
-                <img className="mt-5" src={about1} alt="" /> 
+                <img id="img" className="mt-5" src={about1} alt="" /> 
                 </div>
                 <div className="col-md-6">
                 <Hero>
@@ -24,10 +24,10 @@ const About = () => {
           <p><b>The invention of the paintbrush is generally attributed to Meng Tian, a general in the Qin Dynasty who lived around 300 BC.</b></p>
           <p>
           In the 15th century, brushes were preferably made of animal hair and quills. Soft hair or bristles were inserted into the quills. Due to the natural shape of the quills, these brushes could only be round. Their shape would accompany the art world for hundreds of years
-
           </p>
            <a href="https://finglaspainting.com/the-history-of-the-paint-brush/" className="btn btn-warning" target="_blank"> Read more </a>
         </div>
+        <br></br>
       </Hero.Content>
     </Hero>
                 </div>
