@@ -106,9 +106,15 @@ if(user1){
 </p>
   <Button type="submit" className="w-100 fw-bold" variant="warning">Login</Button>
   <br></br> <br></br>
-  <div className="text-center">OR</div>
+
+  <Divider></Divider>
+      <div className="grid h-20 card bg-base-300 rounded-box place-items-center text-center">
+        OR
+      </div>
+      <br></br>
+
   <Button onClick={() => signInWithGoogle()} type= "submit" className="button"> 
-  <FcGoogle> </FcGoogle> Continue With Google </Button>
+  <FcGoogle className="fs-4"> </FcGoogle> Continue With Google </Button>
   <p className="text-danger">{error1?.message}</p>
  {
      loading1 && <Loading></Loading>
