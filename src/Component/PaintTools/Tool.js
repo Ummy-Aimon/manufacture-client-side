@@ -28,11 +28,13 @@ const Tool = (props) => {
       </div>
       <p><b>price:</b> ${price} </p>
       <p> <b>Rating: </b> {rating}</p>
+      <div className="d-flex">
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
+      </div>
     </Card.Text>
     <Button className="w-100 fw-bold"onClick={()=>navigatetoitemdetail(_id)} variant="warning">Buy now</Button>
   </Card.Body>

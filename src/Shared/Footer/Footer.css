@@ -9,6 +9,7 @@
 .icons{
     color:rgb(233, 98, 26);
     font-size: 30px;
+    display: flex;
     
 }
 /* media query Mobile */

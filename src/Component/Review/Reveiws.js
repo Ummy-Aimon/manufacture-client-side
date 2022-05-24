@@ -13,11 +13,13 @@ const Reveiws = (props) => {
     <Card.Text className="text-center">
       {review}
       <p><b>Rating:</b> {rating} </p>
+      <div className="d-flex justify-content-center align-items-center d-block m-auto">
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
       <AiFillStar className="text-danger"></AiFillStar>
+      </div>
     </Card.Text>
   </Card.Body>
   

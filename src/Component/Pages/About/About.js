@@ -2,8 +2,6 @@ import React from 'react';
 import './About.css'
 import about1 from '../../../image/about-1.jpg'
 import { Hero } from 'react-daisyui';
-import { Link } from 'react-router-dom';
-
 const About = () => {
     return (
         <div id="about" className="about">

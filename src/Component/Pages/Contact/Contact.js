@@ -31,7 +31,10 @@ const Contact = () => {
     <br></br>
   </Form.Group>
   <Button as={Link}  to="/gallary" variant="warning" type="submit">
-    Send Message <AiOutlineArrowRight></AiOutlineArrowRight>
+    <div className="d-flex jutify-content-center align-items-center">
+    Send Message 
+    <AiOutlineArrowRight></AiOutlineArrowRight>
+    </div>
   </Button>
 </Form>
 <br></br>

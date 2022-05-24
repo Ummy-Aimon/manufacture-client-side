@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Achievement from './Component/Achievement/Achievement';
 import Blog from './Component/Blog/Blog';
+import DashBoard from './Component/Dashboard/DashBoard';
 import Gallary from './Component/Gallary/Gallary';
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
@@ -27,6 +28,12 @@ function App() {
          <Route path="/team" element={<Team></Team>}></Route>
          <Route path="/login" element={<Login></Login>}></Route>
          <Route path="/signup" element={<SignUp></SignUp>}></Route>
+         <Route path="/dashboard" 
+         element={
+           <RequireAuth>
+         <DashBoard></DashBoard>
+         </RequireAuth>
+         }></Route>
          <Route path="/blog" element={<Blog></Blog>}></Route>
          <Route path="/gallary" element={<Gallary></Gallary>}></Route>
          <Route path="/tools/:id"
