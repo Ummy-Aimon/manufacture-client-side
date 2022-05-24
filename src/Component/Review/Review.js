@@ -10,7 +10,7 @@ const Review = () => {
        .then(data=>setReview(data))
     },[])
     return (
-        <div>
+        <div id="review">
             <div  className="title-text">
               <h1 className="title">What Our Clients Say
         About Roxce</h1>
