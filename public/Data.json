@@ -77,6 +77,34 @@
         "rating":5.5,
         "img": "https://i.ibb.co/48ShXK3/BPST00751-1.jpg"
           
-      }
+      },
+
+      {
+      
+        "image":"https://i.ibb.co/0ZsDW3b/testi-3.jpg",
+        "review": "This Company service awesome",
+        "name":"Michel Jhon Menda",
+        "rating":3.5
+      },
+
+      {
+    
+      "image":"https://i.ibb.co/6BypV3w/testi-4.jpg",
+      "review": "This Company service fast",
+      "name":"Kane Richardson",
+      "rating":2.5
+  
+    },
+    
+    {
+    
+        
+      "image":"https://i.ibb.co/xsPjgVc/testi-5-1.jpg",
+      "review": "Work Fastly",
+      "name":"Somalia XD Silova",
+      "rating":5.6
+      
+     
+    }
     
   ]
