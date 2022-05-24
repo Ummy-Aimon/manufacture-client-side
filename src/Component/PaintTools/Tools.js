@@ -12,7 +12,7 @@ const Tools = () => {
     },[])
     return (
         <div>
-            <div  className="title-text">
+            <div id="tools" className="title-text">
               <h1 className="title">PaintTools</h1>
               </div>
               <div className="tools-container">
