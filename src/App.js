@@ -6,6 +6,7 @@ import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
 import Parchase from './Component/Parchase/Parchase';
+import RequireAuth from './Component/RequireAuth/RequireAuth';
 import Review from './Component/Review/Review';
 import Service from './Component/Service/Service';
 import SignUp from './Component/SignUp/SignUp';
@@ -26,7 +27,12 @@ function App() {
          <Route path="/login" element={<Login></Login>}></Route>
          <Route path="/signup" element={<SignUp></SignUp>}></Route>
          <Route path="/gallary" element={<Gallary></Gallary>}></Route>
-         <Route path="/tools/:id" element={<Parchase></Parchase>}></Route>
+         <Route path="/tools/:id"
+          element={
+            <RequireAuth>
+          <Parchase></Parchase>
+          </RequireAuth>
+          }></Route>
          <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     <Footer1></Footer1>
