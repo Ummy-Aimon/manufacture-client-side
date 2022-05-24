@@ -5,12 +5,12 @@ import Gallary from './Component/Gallary/Gallary';
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
 import NotFound from './Component/NotFound/NotFound';
+import Parchase from './Component/Parchase/Parchase';
 import Review from './Component/Review/Review';
 import Service from './Component/Service/Service';
 import SignUp from './Component/SignUp/SignUp';
 import Team from './Component/Team/Team';
 import Footer1 from './Shared/Footer/Footer';
-// import Footer1 from './Shared/Footer/Footer';
 import Homepage from './Shared/HomePage/Homepage';
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
          <Route path="/login" element={<Login></Login>}></Route>
          <Route path="/signup" element={<SignUp></SignUp>}></Route>
          <Route path="/gallary" element={<Gallary></Gallary>}></Route>
+         <Route path="/tools/:id" element={<Parchase></Parchase>}></Route>
          <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     <Footer1></Footer1>

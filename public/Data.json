@@ -1,0 +1,82 @@
+[
+    {
+      
+      "name": "2 in STANLEY® FATMAX® PBT Flat Paint Brush",
+      "description":"STANLEY® FATMAX® PBT professional paint brushes are designed to perform well with all paints and have superior performance with paint and primer in one coatings and low VOC coatings.all while being solvent resistant and easy to clean.",
+      "quantity1": 20,
+      "quantity2": 100,
+      "price": 100,
+      "image":"https://i.ibb.co/0ZsDW3b/testi-3.jpg",
+      "review": "This Company service awesome",
+      "name1":"Michel Jhon Menda",
+      "rating":3.5,
+      "img": "https://i.ibb.co/kcXTTPT/tools-1.jpg"
+      
+    },
+    {
+    
+        "name": "2 pc Paint Brush Set",
+        "description":"STANLEY premium paint brushes are designed to perform well with all paints. Our 100% tipped and flagged solid round tapered (SRT) polyester filaments ensure durability while a smooth chiseled edge allows for even paint distribution with no drag or brush marks.",
+        "quantity1": 30,
+        "quantity2": 200,
+        "price": 200,
+        "image":"https://i.ibb.co/6BypV3w/testi-4.jpg",
+      "review": "This Company service fast",
+      "name1":"Kane Richardson",
+      "rating":2.5,
+        "img": "https://i.ibb.co/zbFW1zq/BPST07222-1.jpg"
+     
+    },
+    {
+    
+        
+        "name": "4 in Polyester Flat Paint Brush",
+        "description":"STANLEY premium paint brushes are designed to perform well with all paints. Our 100% tipped and flagged solid round tapered (SRT) polyester filaments ensure durability while a smooth chiseled edge allows for even paint distribution with no drag or brush marks. ",
+        "quantity1": 10,
+        "quantity2": 150,
+        "price": 250,
+        "image":"https://i.ibb.co/xsPjgVc/testi-5-1.jpg",
+        "review": "Work Fastly",
+        "name1":"Somalia XD Silova",
+        "rating":5.6,
+        "img": "https://i.ibb.co/SmY5tKc/BPST00757-1.jpg"
+       
+      },
+      {
+    
+        
+        "name": "2 in Polyester Angle Paint Brush",
+        "description":"STANLEY premium paint brushes are designed to perform well with all paints. Our 100% tipped and flagged solid round tapered (SRT) polyester filaments ensure durability while a smooth chiseled edge allows for even paint distribution with no drag or brush marks. ",
+        "quantity1": 20,
+        "quantity2": 100,
+        "price": 350,
+        "rating":2.5,
+        "img": "https://i.ibb.co/hgNH74c/BPST00763-1.jpg"
+       
+       
+      },
+      {
+     
+        "name": "Angle Paint Brush",
+        "description":"STANLEY® FATMAX® PBT professional paint brushes are designed to perform well with all paints and have superior performance with paint and primer in one coatings and low VOC coatings.",
+        "quantity1": 40,
+        "quantity2": 300,
+        "price": 450,
+        "rating":4.5,
+        "img": "https://i.ibb.co/8N1c4D2/BPST02565-1.jpg"
+       
+       
+      },
+      
+      {
+        "name": "1 in Polyester Flat Paint Brush",
+        "description":"STANLEY premium paint brushes are designed to perform well with all paints. Our 100% tipped and flagged solid round tapered (SRT) polyester filaments ensure durability while a smooth chiseled edge allows for even paint distribution with no drag or brush marks.",
+        "quantity1": 30,
+        "quantity2": 300,
+        "price": 250,
+        "rating":5.5,
+        "img": "https://i.ibb.co/48ShXK3/BPST00751-1.jpg"
+          
+      }
+    
+  ]
