@@ -11,7 +11,7 @@
 * `DashBoard`
 * `Review`
 * `My Order`
-* `footer`
+* `PaintBlush service`
 
 ## Technologies
 * UseNavigate
