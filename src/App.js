@@ -4,6 +4,7 @@ import Achievement from './Component/Achievement/Achievement';
 import Blog from './Component/Blog/Blog';
 import DashBoard from './Component/Dashboard/DashBoard';
 import MyOrder from './Component/Dashboard/DashboardPages/MyOrder';
+import MyProfile from './Component/Dashboard/DashboardPages/MyProfile';
 import MyReview from './Component/Dashboard/DashboardPages/MyReview';
 import Gallary from './Component/Gallary/Gallary';
 import Header from './Component/Header/Header';
@@ -12,11 +13,11 @@ import NotFound from './Component/NotFound/NotFound';
 import Parchase from './Component/Parchase/Parchase';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
 import Review from './Component/Review/Review';
-import Service from './Component/Service/Service';
 import SignUp from './Component/SignUp/SignUp';
 import Team from './Component/Team/Team';
 import Footer1 from './Shared/Footer/Footer';
 import Homepage from './Shared/HomePage/Homepage';
+import Profile from './Component/Profile/Profile';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Homepage></Homepage>}></Route>
-        <Route path="/service" element={<Service></Service>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/achievement" element={<Achievement></Achievement>}></Route>
         <Route path="/review" element={<Review></Review>}></Route>
          <Route path="/team" element={<Team></Team>}></Route>
@@ -38,6 +39,7 @@ function App() {
          }>
          <Route index element={<MyOrder></MyOrder>}></Route>
          <Route path="review" element={<MyReview></MyReview>}></Route>
+         <Route path="profile" element={<MyProfile></MyProfile>}></Route>
          </Route>
          <Route path="/blog" element={<Blog></Blog>}></Route>
          <Route path="/gallary" element={<Gallary></Gallary>}></Route>

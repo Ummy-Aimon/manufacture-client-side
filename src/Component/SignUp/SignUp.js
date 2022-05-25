@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import './SignUp.css'
 import auth from '../../firebase-init';
 import Loading from '../Loading/Loading';
+import useToken from '../UseToken/UseToken';
 
 const SignUp = () => {
    const [displayName,setdisplayName]= useState('')
@@ -21,6 +22,9 @@ const SignUp = () => {
   useCreateUserWithEmailAndPassword(auth);
   const [updateProfile,updating] = useUpdateProfile(auth);
 
+  //  Token
+
+  const[token] = useToken(user)
 
   if(error1){
       return

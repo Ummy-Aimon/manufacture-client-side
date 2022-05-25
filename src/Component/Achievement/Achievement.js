@@ -30,7 +30,9 @@ const Achievement = () => {
           A paintbrush is a brush used to apply paint or ink. A paintbrush is usually made by clamping bristles to a handle with a ferrule. They are available in various sizes, shapes, and materials. Thicker ones are used for filling in, and thinner ones are used for details.
           </p>
           <Button as={Link}  to="/gallary" variant="warning" type="submit">
+            <div className="d-flex jutify-content-center align-items-center">
     Send Message <AiOutlineArrowRight></AiOutlineArrowRight>
+    </div>
   </Button>
         </div>
       </Hero.Content>

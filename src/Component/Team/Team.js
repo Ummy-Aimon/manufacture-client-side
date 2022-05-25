@@ -27,10 +27,12 @@ const Team = () => {
     <Card.Text>
     Commercial Painter
     </Card.Text>
+    <div className="d-flex">
     <BsFacebook className="m-2"></BsFacebook>
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+                </div>
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
@@ -40,11 +42,14 @@ const Team = () => {
     <Card.Text>
     Commercial Painter
     </Card.Text>
+    <div className="d-flex">
     <BsFacebook className="m-2"></BsFacebook>
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+                </div>
   </Card.Body>
+
 </Card>
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team2} />
@@ -53,11 +58,14 @@ const Team = () => {
     <Card.Text>
     Commercial Painter
     </Card.Text>
+    <div className="d-flex">
     <BsFacebook className="m-2"></BsFacebook>
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+                </div>
   </Card.Body>
+
 </Card>
 <Card style={{ width: '18rem' }}>
 <Card.Img variant="" className="" src={team3} />
@@ -66,10 +74,12 @@ const Team = () => {
     <Card.Text>
     Commercial Painter
     </Card.Text>
+    <div className="d-flex">
     <BsFacebook className="m-2"></BsFacebook>
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+                </div>
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
@@ -79,10 +89,12 @@ const Team = () => {
     <Card.Text>
     Commercial Painter
     </Card.Text>
+    <div className="d-flex">
     <BsFacebook className="m-2"></BsFacebook>
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+                </div>
   </Card.Body>
 </Card>
 <Card style={{ width: '18rem' }}>
@@ -92,10 +104,12 @@ const Team = () => {
     <Card.Text>
     Commercial Painter
     </Card.Text>
+       <div className="d-flex">
     <BsFacebook className="m-2"></BsFacebook>
                 <BsTwitter className="m-2"></BsTwitter>
                 <AiFillYoutube className="m-2"></AiFillYoutube>
                 <AiFillLinkedin className="m-2"></AiFillLinkedin>
+                </div>
   </Card.Body>
 </Card>
 </div>
