@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {FcGoogle} from 'react-icons/fc'
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css'
 import Loading from '../Loading/Loading';
 import auth from '../../firebase-init';
-import { Divider } from 'react-daisyui';
+
 
 const Login = () => {
     const[email,setEmail] = useState('')
@@ -107,14 +106,15 @@ if(user1){
   <Button type="submit" className="w-100 fw-bold" variant="warning">Login</Button>
   <br></br> <br></br>
 
-  <Divider></Divider>
-      <div className="grid h-20 card bg-base-300 rounded-box place-items-center text-center">
-        OR
-      </div>
+  <div class="divider">OR</div>
       <br></br>
 
-  <Button onClick={() => signInWithGoogle()} type= "submit" className="button"> 
-  <FcGoogle className="fs-4"> </FcGoogle> Continue With Google </Button>
+  {/* <Button onClick={() => signInWithGoogle()} type= "submit" className="button"> 
+  <FcGoogle className="fs-4"> </FcGoogle> Continue With Google </Button> */}
+
+<button onClick={() => signInWithGoogle()}type= "submit"  className="btn btn-active btn-accent w-100 ">
+ Continue With Google
+  </button>
   <p className="text-danger">{error1?.message}</p>
  {
      loading1 && <Loading></Loading>

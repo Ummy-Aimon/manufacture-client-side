@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase-init';
+
 
 const Parchase = (props) => {
     const navigate= useNavigate()
@@ -11,7 +15,9 @@ const Parchase = (props) => {
     .then(response=>response.json())
     .then(data=>setTool(data))
  },[])
-
+ const [user] = useAuthState(auth)
+ const { register, handleSubmit } = useForm();
+ const onSubmit = data => console.log(data);
     return (
         <div className="info">
             <div  className="title-text">
@@ -31,15 +37,38 @@ const Parchase = (props) => {
       {tools.description}
       <br></br>
       <br></br>
-
       <p><b>Minimum order:</b> {tools.quantity1} </p>
       <p><b>Available order:</b> {tools.quantity2} </p>
-      
       <p><b>price:</b> ${tools.price} </p>
       </Card.Text>
   </Card.Body>
   </div>
  </div>
+ <hr></hr>
+</div>
+<div className="m-5">
+    <h2 className="fw-bold text-success">Please Place Order</h2>
+<form onSubmit={handleSubmit(onSubmit)}>
+<input type="text" disabled value={user?.displayName} className="input input-bordered input-warning w-full max-w-xs"
+{...register("Name")}
+/>
+<br></br><br></br>
+<input type="email" disabled value={user?.email} className="input input-bordered input-warning w-full max-w-xs" 
+{...register("email", { required: true, maxLength: 20 })}
+/>
+<br></br><br></br>
+<input type="number" placeholder="Phone Number" className="input input-bordered input-warning w-full max-w-xs"
+{...register("Phone Number")}
+/>
+<br></br><br></br>
+<input type="number" placeholder="Quranty order" className="input input-bordered input-warning w-full max-w-xs"
+{...register("Qurantity")}
+/>
+<br></br><br></br>
+ {/* <button  className="btn btn warning text-white"  type="submit"/>  */}
+<button type="submit" className="btn btn-warning">Submit</button>
+  
+</form>
 </div>
 </div>
     );

@@ -1,25 +1,24 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 
 const DashBoard = () => {
     
     return (
-
-        
         <div className="info">
-            <h1>hlw dashboard</h1>
             <div class="drawer">
   <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
-   
-    <label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label>
+  <div class="drawer-content text-center">
+  <h2 className="text-danger text-center mt-5">Welcome to my Dashboard</h2>
+  <Outlet></Outlet>
+  <label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label>
   </div> 
   <div class="drawer-side">
     <label for="my-drawer" class="drawer-overlay"></label>
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-    
-      <li><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
+    {/* <!-- Page content here --> */}
+      <li><Link to="/dashboard"> My order</Link></li>
+      <li><Link to ="/dashboard/review">Review</Link></li>
       
     </ul>
   </div>

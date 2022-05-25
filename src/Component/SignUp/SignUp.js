@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './SignUp.css'
 import auth from '../../firebase-init';
 import Loading from '../Loading/Loading';
 
 const SignUp = () => {
-   const [name,setName]= useState('')
+   const [displayName,setdisplayName]= useState('')
    const [email,setEmail]= useState('')
    const [password,setPassword]= useState('')
    const [confirmpassword,setConfirmPassword]= useState('')
@@ -19,6 +19,8 @@ const SignUp = () => {
     error1,
     loading ]=
   useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile,updating] = useUpdateProfile(auth);
+
 
   if(error1){
       return
@@ -26,7 +28,9 @@ const SignUp = () => {
 if(loading){
 return
 }
-
+if (updating) {
+  return <Loading></Loading>
+}
 if(user){
     navigate('/')
  }
@@ -34,7 +38,7 @@ if(user){
 //   form even blur
 
 const handleNameBlur = (e)=>{
-setName(e.target.value)
+  setdisplayName(e.target.value)
 }
 const handleEmailBlur = (e)=>{
     setEmail(e.target.value)
@@ -45,7 +49,8 @@ const handleEmailBlur = (e)=>{
         const handleConfirmPasswordBlur = (e)=>{
             setConfirmPassword(e.target.value)
             }
-            const handleCreateUser = (e)=>{
+            const  handleCreateUser = async (e)=>{
+             
                 e.preventDefault()
                 if(password !== confirmpassword){
                     setError('Your password did not match')
@@ -55,9 +60,12 @@ const handleEmailBlur = (e)=>{
                         setError('Password must be 6 character')
                         return;
                     }
+     
+               await createUserWithEmailAndPassword(email, password)
+                await updateProfile(displayName) 
                 
-                createUserWithEmailAndPassword(email, password)
             }
+            
     return (
         <div className="info">
            <div  className="title-text">
@@ -84,7 +92,7 @@ const handleEmailBlur = (e)=>{
 loading && <Loading></Loading>
 } 
   <p className="fw-bold text-secondary">Already have a account ? <Link className="text-decoration-none text-secondary" to="/login">Login</Link></p>
-  <Button className="fw-bold w-100" variant="warning" type="submit">
+  <Button  className="fw-bold w-100" variant="warning" type="submit">
     Register
   </Button>
   <p className="text-danger">{error1.message}</p>

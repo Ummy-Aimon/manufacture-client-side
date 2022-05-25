@@ -3,6 +3,8 @@ import './App.css';
 import Achievement from './Component/Achievement/Achievement';
 import Blog from './Component/Blog/Blog';
 import DashBoard from './Component/Dashboard/DashBoard';
+import MyOrder from './Component/Dashboard/DashboardPages/MyOrder';
+import MyReview from './Component/Dashboard/DashboardPages/MyReview';
 import Gallary from './Component/Gallary/Gallary';
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
@@ -33,7 +35,10 @@ function App() {
            <RequireAuth>
          <DashBoard></DashBoard>
          </RequireAuth>
-         }></Route>
+         }>
+         <Route index element={<MyOrder></MyOrder>}></Route>
+         <Route path="review" element={<MyReview></MyReview>}></Route>
+         </Route>
          <Route path="/blog" element={<Blog></Blog>}></Route>
          <Route path="/gallary" element={<Gallary></Gallary>}></Route>
          <Route path="/tools/:id"
