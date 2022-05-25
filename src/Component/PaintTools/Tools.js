@@ -6,7 +6,7 @@ const Tools = () => {
     const[tools,setTool]= useState([])
 
     useEffect(()=>{
-       fetch('http://localhost:5000/tools')
+       fetch('https://boiling-cove-99887.herokuapp.com/tools')
        .then(response => response.json())
        .then(data=>setTool(data))
     },[])
