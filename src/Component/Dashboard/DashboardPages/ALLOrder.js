@@ -31,7 +31,7 @@ const ALLOrder = () => {
     return (
         <div className="" w-50 mx-auto>
             < div className="title-text">
-              <h1 className="title">MY Review</h1>
+              <h1 className="title">Add Order Purchase</h1>
               </div>
             <form onSubmit={handleSubmit(onSubmit)}>
 <input type="text" placeholder="Enter Name" className="input input-bordered input-warning w-full max-w-xs"
