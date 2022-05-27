@@ -29,7 +29,7 @@ setItem(del)
   useEffect(()=>{
   const getItem = async()=>{
          const url=
- `http://localhost:5000/order`
+ `https://boiling-cove-99887.herokuapp.com:5000/order`
  const{data}= await axios.get(url)
  setItem(data)
   }

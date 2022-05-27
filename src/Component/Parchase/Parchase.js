@@ -11,7 +11,7 @@ const Parchase = () => {
     const {id}= useParams()
  const[tools,setTool]= useState({})
  useEffect(()=>{
-    fetch(`http://localhost:5000/tools/${id}`)
+    fetch(`https://boiling-cove-99887.herokuapp.com/tools/${id}`)
     .then(response=>response.json())
     .then(data=>setTool(data))
  },[])
