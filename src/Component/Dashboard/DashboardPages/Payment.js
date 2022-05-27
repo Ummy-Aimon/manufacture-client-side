@@ -7,7 +7,7 @@ import CheckOutFrom from './CheckoutFrom/CheckOutFrom';
 const stripePromise = loadStripe('pk_test_51L3z5GFG75V9NjRCHiM86izZyqLQSPKqbPQSCpvutsv20draNokIUspRqd2TDw272JMefsP5xmlNALDwIQl8qkFp00455A8A1C');
 const Payment = () => {
     const {id}=useParams()
-    const{data:item,isLoading}= useQuery('purchase',()=>fetch(`http://localhost:5000/purchase/${id}`).then(res=>res.json()))
+    const{data:item,isLoading}= useQuery('purchase',()=>fetch(`https://boiling-cove-99887.herokuapp.com/purchase/${id}`).then(res=>res.json()))
  if(isLoading){
      return
  }

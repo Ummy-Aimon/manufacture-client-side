@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [user]=useAuthState(auth)
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-    const url= `http://localhost:5000/profile`
+    const url= `https://boiling-cove-99887.herokuapp.com/profile`
      fetch(url,{
          method: 'POST',
          headers: { 

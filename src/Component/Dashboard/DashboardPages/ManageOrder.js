@@ -13,7 +13,7 @@ const ManageOrder = () => {
   const handleDelete =id=>{
     const procced= window.confirm('Are You Sure?')
     if(procced){
-const url=`http://localhost:5000/order/${id}`
+const url=`https://boiling-cove-99887.herokuapp.com/order/${id}`
 fetch(url,{
 method: 'DELETE',
 })

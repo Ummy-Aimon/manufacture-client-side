@@ -6,12 +6,12 @@ import Loading from '../../Loading/Loading';
 const ALLOrder = () => {
     const { register, handleSubmit } = useForm();
  
- const{data:tools,isLoading}= useQuery('tools',()=>fetch('http://localhost:5000/tools').then(res=>res.json()))
+ const{data:tools,isLoading}= useQuery('tools',()=>fetch('https://boiling-cove-99887.herokuapp.com/tools').then(res=>res.json()))
  if(isLoading){
      return <Loading></Loading>
  }
  const onSubmit = data => {
-    const url= `http://localhost:5000/order`
+    const url= `https://boiling-cove-99887.herokuapp.com/order`
      fetch(url,{
          method: 'POST',
          headers: { 

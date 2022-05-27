@@ -10,7 +10,7 @@ const CheckOutFrom = ({item}) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(()=>{
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://boiling-cove-99887.herokuapp.com/create-payment-intent', {
             method: 'POST',
             
             headers:{

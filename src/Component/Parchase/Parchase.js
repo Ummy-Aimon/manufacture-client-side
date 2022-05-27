@@ -20,7 +20,7 @@ const Parchase = () => {
  const { register, handleSubmit } = useForm();
 
  const onSubmit = data => {
-        const url= `http://localhost:5000/purchase`
+        const url= `https://boiling-cove-99887.herokuapp.com/purchase`
          fetch(url,{
              method: 'POST',
              headers: { 

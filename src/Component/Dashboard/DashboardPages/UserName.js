@@ -5,7 +5,7 @@ import UserRow from './UserRow';
 
 const UserName = () => {
    
-    const{data,isLoading,refetch}= useQuery('users',()=>fetch('http://localhost:5000/user').then(res=>res.json()))
+    const{data,isLoading,refetch}= useQuery('users',()=>fetch('https://boiling-cove-99887.herokuapp.com/user').then(res=>res.json()))
 
     if(isLoading){
         return <Loading></Loading>

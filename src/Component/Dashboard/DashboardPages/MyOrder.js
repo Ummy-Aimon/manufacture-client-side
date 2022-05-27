@@ -11,7 +11,7 @@ const MyOrder = () => {
     const getItem = async()=>{
         const email= user?.email
            const url=
-   `http://localhost:5000/purchase?email=${email}`
+   `https://boiling-cove-99887.herokuapp.com/purchase?email=${email}`
    const{data}= await axios.get(url)
    setItem(data)
     }
