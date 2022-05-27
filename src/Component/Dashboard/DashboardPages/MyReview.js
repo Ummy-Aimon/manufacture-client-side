@@ -21,7 +21,9 @@ const MyReview = () => {
   }
     return (
             <div className="w-50 mx-auto">
-            <h1>My Review</h1>
+               < div className="title-text">
+              <h1 className="title">MY Review</h1>
+              </div>
             <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
       <input className="mb-3 input input-bordered input-warning w-full max-w-xs" placeholder="name" {...register("name", { required: true, maxLength: 20 })}/>
       <textarea className="mb-3 input input-bordered input-warning w-full max-w-xs" placeholder="review" {...register("review")}/>

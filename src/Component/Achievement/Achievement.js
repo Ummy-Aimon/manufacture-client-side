@@ -13,7 +13,7 @@ const Achievement = () => {
     return (
 
         <div className="info">
-        <div  className="title-text">
+        <div id="achievement" className="title-text">
               <h1 className="title">Company Statistics</h1>
               <p className="fw-bold text-warning">Explore About Our Painting Services Achievement</p>
               </div>

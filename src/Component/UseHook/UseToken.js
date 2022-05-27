@@ -19,6 +19,9 @@ const useToken = (user) =>{
     .then(result=>
      {
          console.log('usetoken',result)
+         const token= result.token
+         localStorage.setItem('token',token)
+         setToken(token)
     })
   }
     },[user])

@@ -5,7 +5,8 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import './SignUp.css'
 import auth from '../../firebase-init';
 import Loading from '../Loading/Loading';
-import useToken from '../UseToken/UseToken';
+import useToken from '../UseHook/UseToken';
+
 
 const SignUp = () => {
    const [displayName,setdisplayName]= useState('')
@@ -25,7 +26,8 @@ const SignUp = () => {
   //  Token
 
   const[token] = useToken(user)
-
+ 
+  
   if(error1){
       return
   }
@@ -35,7 +37,7 @@ return
 if (updating) {
   return <Loading></Loading>
 }
-if(user){
+if(token){
     navigate('/')
  }
 

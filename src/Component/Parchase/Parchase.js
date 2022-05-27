@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase-init';
 
 
-const Parchase = (props) => {
+const Parchase = () => {
     const navigate= useNavigate()
     const {id}= useParams()
  const[tools,setTool]= useState({})
@@ -16,8 +16,27 @@ const Parchase = (props) => {
     .then(data=>setTool(data))
  },[])
  const [user] = useAuthState(auth)
+
  const { register, handleSubmit } = useForm();
- const onSubmit = data => console.log(data);
+
+ const onSubmit = data => {
+        const url= `http://localhost:5000/purchase`
+         fetch(url,{
+             method: 'POST',
+             headers: { 
+                 'content-type':'application/json',
+                 'authorization': `Bearer ${localStorage.getItem('token')}`
+
+          },
+      
+          body: JSON.stringify(data)
+         })
+         .then(res=>res.json())
+         .then(result=>
+          {
+              console.log(result)
+         })
+ } 
     return (
         <div className="info">
             <div  className="title-text">
@@ -49,23 +68,31 @@ const Parchase = (props) => {
 <div className="m-5">
     <h2 className="fw-bold text-success">Please Place Order</h2>
 <form onSubmit={handleSubmit(onSubmit)}>
-<input type="text" disabled value={user?.displayName} className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" value={user?.displayName} className="input input-bordered input-warning w-full max-w-xs"
 {...register("Name")}
 />
 <br></br><br></br>
-<input type="email" disabled value={user?.email} className="input input-bordered input-warning w-full max-w-xs" 
+<input type="text" value={tools.name} className="input input-bordered input-warning w-full max-w-xs"
+{...register("name")}
+/>
+
+<br></br><br></br>
+<input type="email"  value={user?.email} className="input input-bordered input-warning w-full max-w-xs" 
 {...register("email", { required: true, maxLength: 20 })}
 />
 <br></br><br></br>
 <input type="number" placeholder="Phone Number" className="input input-bordered input-warning w-full max-w-xs"
-{...register("Phone Number")}
+{...register("phone")}
 />
 <br></br><br></br>
-<input type="number" placeholder="Quranty order" className="input input-bordered input-warning w-full max-w-xs"
-{...register("Qurantity")}
+<input type="number"  placeholder="Quranty order" className="input input-bordered input-warning w-full max-w-xs"
+{...register("qurantity")}
 />
 <br></br><br></br>
- {/* <button  className="btn btn warning text-white"  type="submit"/>  */}
+<input type="text" placeholder="Price" className="input input-bordered input-warning w-full max-w-xs"
+{...register("price")}
+/>
+<br></br><br></br>
 <button type="submit" className="btn btn-warning">Submit</button>
   
 </form>

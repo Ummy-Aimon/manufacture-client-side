@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Login.css'
 import Loading from '../Loading/Loading';
 import auth from '../../firebase-init';
+import useToken from '../UseHook/UseToken';
+
 
 
 const Login = () => {
@@ -19,7 +21,8 @@ const Login = () => {
 const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
       const navigate= useNavigate()
       let location = useLocation();
- 
+//  token
+      const[token] = useToken(user|| user1)
 
   let from = location.state?.from?.pathname || "/";
 
@@ -32,10 +35,10 @@ const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPas
          setPassword(e.target.value)
      }
 
-if(user){
+if(token){
 navigate(from, { replace: true })
 }
-if(user1){
+if(token){
     navigate(from, { replace: true })
     }
 
