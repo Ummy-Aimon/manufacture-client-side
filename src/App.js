@@ -22,6 +22,7 @@ import ManageOrder from './Component/Dashboard/DashboardPages/ManageOrder';
 import RequireAdmin from './Component/RequireAdmin/RequireAdmin';
 import MyProfile from './Component/Dashboard/DashboardPages/MyProfile';
 import Payment from './Component/Dashboard/DashboardPages/Payment';
+import ManageProduct from './Component/Dashboard/DashboardPages/ManageProduct';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
            </RequireAdmin>}></Route>
          <Route path="allorder" element={<ALLOrder></ALLOrder>}></Route>
          <Route path="manageorder" element={<ManageOrder></ManageOrder>}></Route>
+         <Route path="manage" element={<ManageProduct></ManageProduct>}></Route>
          </Route>
          <Route path="/blog" element={<Blog></Blog>}></Route>
          <Route path="/gallary" element={<Gallary></Gallary>}></Route>

@@ -68,7 +68,7 @@ const handleEmailBlur = (e)=>{
                     }
      
                await createUserWithEmailAndPassword(email, password)
-                await updateProfile(displayName) 
+                await updateProfile({displayName}) 
                 
             }
             

@@ -29,7 +29,7 @@ const MyProfile = () => {
               <h1 className="title">MY Profile</h1>
               </div>
             <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
-      <input  className="mb-3 input input-bordered input-warning w-full max-w-xs" placeholder="name" {...register("name", { required: true, maxLength: 20 })}/>
+      <input value={user?.displayName}  className="mb-3 input input-bordered input-warning w-full max-w-xs" placeholder="name" {...register("name", { required: true, maxLength: 20 })}/>
       <input value={user?.email}className="mb-3 input input-bordered input-warning w-full max-w-xs" placeholder="Email" {...register("email", { required: true, maxLength: 20 })}/>
       <textarea className="mb-3 input input-bordered input-warning w-full max-w-xs" placeholder="Education" {...register("Education")}/>
      

@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase-init';
-import PurchaseRow from './PurchaseRow';
+import AdminPurchase from './AdminPurchase';
 
-const MyOrder = () => {
+const ManageProduct = () => {
     const[user]= useAuthState(auth)
     const[items,setItem]=useState([])
     useEffect(()=>{
     const getItem = async()=>{
-        const email= user?.email
            const url=
-   `https://boiling-cove-99887.herokuapp.com/purchase?email=${email}`
+   `https://boiling-cove-99887.herokuapp.com/purchaseadmin`
    const{data}= await axios.get(url)
    setItem(data)
     }
@@ -19,9 +18,9 @@ const MyOrder = () => {
        },[user])
     return (
         <div>
-            < div className="title-text">
-              <h1 className="title">MY Order</h1>
-              </div>
+<div className="title-text">
+<h1 className="title">Manage Order</h1>
+</div>
  <div class="overflow-x-auto">
   <table class="table w-full">
     <thead>
@@ -36,16 +35,17 @@ const MyOrder = () => {
     </thead>
     <tbody>
              {
-               items.map(item=><PurchaseRow key={item._id} item={item}>   
-          </PurchaseRow>)
+               items.map(item=><AdminPurchase key={item._id} item={item}>
+ </AdminPurchase>)
           }
-      
-    </tbody>
+      </tbody>
   </table>
-</div>
-                
-        </div>
+</div> 
+</div>   
     );
 };
 
-export default MyOrder;
+export default ManageProduct;
+
+
+

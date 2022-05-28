@@ -14,12 +14,45 @@ const Parchase = () => {
     fetch(`https://boiling-cove-99887.herokuapp.com/tools/${id}`)
     .then(response=>response.json())
     .then(data=>setTool(data))
- },[])
+ },[id])
  const [user] = useAuthState(auth)
 
- const { register, handleSubmit } = useForm();
 
+// 
+
+ const minQuantity = tools?.quantity1
+ console.log(minQuantity)
+ const maxQuantity = tools?.quantity2
+ const [isDesable,setDesable]=useState(false)
+ const[errorElement,setErrorElement]=useState('')
+ const[quantityPurchase,setQuantityPurchase]= useState(tools?.quantity1)
+useEffect(()=>{
+ setQuantityPurchase(tools.quantity1)
+},[tools.quantity1])
+ const handledisable= (e)=>{
+     const orderQuantity= e.target.value;
+     if(orderQuantity<minQuantity){
+        setErrorElement(`order quantity must be more than ${minQuantity}`)
+             setDesable(true)
+         }
+         else if (orderQuantity>maxQuantity){
+            setErrorElement(`order quantity must be less than ${maxQuantity}`)
+             setDesable(true)
+         }
+        
+         else{
+             setErrorElement('')
+             setDesable(false)
+             setQuantityPurchase(orderQuantity)
+ }
+
+ 
+ }
+ const { register, handleSubmit } = useForm();
  const onSubmit = data => {
+     const {price,...rest}=data
+     const newdata= {...rest,price:tools.price,qurantity:quantityPurchase}
+     console.log(newdata)
         const url= `https://boiling-cove-99887.herokuapp.com/purchase`
          fetch(url,{
              method: 'POST',
@@ -29,7 +62,7 @@ const Parchase = () => {
 
           },
       
-          body: JSON.stringify(data)
+          body: JSON.stringify(newdata)
          })
          .then(res=>res.json())
          .then(result=>
@@ -67,33 +100,33 @@ const Parchase = () => {
 </div>
 <div className="m-5">
     <h2 className="fw-bold text-success">Please Place Order</h2>
-<form onSubmit={handleSubmit(onSubmit)}>
-<input type="text" value={user?.displayName} className="input input-bordered input-warning w-full max-w-xs"
+<form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
+<input type="text" value={user?.displayName} className="input input-bordered input-warning w-full mt-3 max-w-xs"
 {...register("Name")}
 />
-<br></br><br></br>
-<input type="text" value={tools.name} className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" value={tools.name} className="input input-bordered input-warning  mt-3 w-full max-w-xs"
 {...register("name")}
 />
 
-<br></br><br></br>
-<input type="email"  value={user?.email} className="input input-bordered input-warning w-full max-w-xs" 
+<input type="email"  value={user?.email} className="input input-bordered input-warning w-full  mt-3 max-w-xs" 
 {...register("email", { required: true, maxLength: 20 })}
 />
-<br></br><br></br>
-<input type="text" placeholder="Phone Number" className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" placeholder="Phone Number" className="input input-bordered input-warning  mt-3 w-full max-w-xs"
 {...register("phone")}
 />
-<br></br><br></br>
-<input type="number"  placeholder="Quranty order" className="input input-bordered input-warning w-full max-w-xs"
+
+<input type="number"  placeholder="Quranty order" className="input input-bordered input-warning  mt-3 w-full max-w-xs"
 {...register("qurantity")}
+defaultValue={quantityPurchase}
+min={tools.quantity1}
+max={tools.quantity2}
+onChange={(e)=>handledisable(e)}
 />
-<br></br><br></br>
-<input type="text" placeholder="Price"value={tools.price} className="input input-bordered input-warning w-full max-w-xs"
+{errorElement && <p><small className="text-danger my-2">{errorElement}</small></p>}
+<input type="text" placeholder="Price"value={tools.price} className="input input-bordered  mt-3 input-warning mt-3 w-full max-w-xs"
 {...register("price")}
 />
-<br></br><br></br>
-<button type="submit" className="btn btn-warning">Submit</button>
+<button disabled={isDesable} type="submit" className="btn btn-warning w-full max-w-xs mt-3">Submit</button>
   
 </form>
 </div>

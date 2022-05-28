@@ -1,18 +1,15 @@
-
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import auth from '../../../firebase-init';
 
-const PurchaseRow = ({item}) => {
-  // const[user]= useAuthState(auth)
-  const[items,setItem]=useState([])
+const AdminPurchase = ({item}) => {
+    const{Name,email,qurantity,phone,price,paid,_id,transaction}=item
+    const[items,setItem]=useState([])
   const handleDelete =id=>{
     const procced= toast('Delete succesfully')
     if(procced){
-const url=`https://boiling-cove-99887.herokuapp.com/purchase/${id}`
+const url=`https://boiling-cove-99887.herokuapp.com/${id}`
 fetch(url,{
 method: 'DELETE',
 })
@@ -25,7 +22,6 @@ setItem(del)
 })
 }
 }
- const{Name,email,qurantity,phone,price,paid,_id,transaction}=item
     return (
             <tr>
         <th></th>
@@ -52,4 +48,4 @@ setItem(del)
     );
 };
 
-export default PurchaseRow;
+export default AdminPurchase;

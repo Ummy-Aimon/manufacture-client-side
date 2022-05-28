@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase-init';
 import './ManageOrder.css'
 
@@ -9,7 +10,7 @@ const ManageOrder = () => {
   const[user]= useAuthState(auth)
   const[tools,setTool]=useState([])
   const handleDelete =id=>{
-    const procced= window.confirm('Are You Sure?')
+    const procced= toast('Delete succesfully')
     if(procced){
 const url=`https://boiling-cove-99887.herokuapp.com/tools/${id}`
 fetch(url,{
@@ -36,7 +37,7 @@ setTool(del)
      return(
      <div>
        <div className="title-text">
-<h1 className="mt-3 text-warning fw-bold text-center">Manage order</h1> 
+<h1 className="mt-3 text-warning fw-bold text-center">Manage Product</h1> 
 </div>
 <div className="content">
 {
@@ -47,6 +48,7 @@ setTool(del)
   <Card.Img className="w-50" variant="top" src={tool.img} />
   <Card.Body>
   <Card.Title>{tool.name}<button className="btn btn danger"  onClick={()=>handleDelete(tool._id)}>X</button></Card.Title>
+  <ToastContainer></ToastContainer>
   <Card.Text>
   <p> <b>Order Qurantity:</b>{tool.quantity1}</p>
   <p> <b>Available Qurantity:</b>{tool.quantity2}</p>
