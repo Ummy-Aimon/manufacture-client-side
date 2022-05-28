@@ -29,7 +29,7 @@ setItem(del)
   useEffect(()=>{
   const getItem = async()=>{
          const url=
- `https://boiling-cove-99887.herokuapp.com:5000/order`
+ `https://boiling-cove-99887.herokuapp.com:5000/tools`
  const{data}= await axios.get(url)
  setItem(data)
   }
@@ -50,6 +50,10 @@ setItem(del)
 <Card.Text>
 email:{item.email}
 <p> <b>Qurantity:</b>{item.quantity1}</p>
+<p> <b>Qurantity:</b>{item.quantity2}</p>
+<p> <b>Qurantity:</b>{item.rating}</p>
+<p> <b>Qurantity:</b>{item.price}</p>
+<p> <b>Qurantity:</b>{item.rating}</p>
 </Card.Text>
 
 </Card.Body>

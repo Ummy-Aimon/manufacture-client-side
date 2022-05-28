@@ -2,10 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
+import auth from '../../firebase-init';
+import UseAdmin from '../UseHook/UseAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const ALLOrder = () => {
     const { register, handleSubmit } = useForm();
- 
+    const [user]=useAuthState(auth)
+    const [admin]=UseAdmin(user)
  const{data:tools,isLoading}= useQuery('tools',()=>fetch('https://boiling-cove-99887.herokuapp.com/tools').then(res=>res.json()))
  if(isLoading){
      return <Loading></Loading>
@@ -34,11 +38,11 @@ const ALLOrder = () => {
               <h1 className="title">Add Order Purchase</h1>
               </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-<input type="text" placeholder="Enter Name" className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" value={admin?.name} placeholder="Enter Name" className="input input-bordered input-warning w-full max-w-xs"
 {...register("Name")}
 />
 <br></br><br></br>
-<input type="email" placeholder="Enter Email" className="input input-bordered input-warning w-full max-w-xs" 
+<input type="email" value={admin?.email} placeholder="Enter Email" className="input input-bordered input-warning w-full max-w-xs" 
 {...register("email", { required: true, maxLength: 20 })}
 
 />
