@@ -50,6 +50,7 @@ setTool(del)
   <Card.Title>{tool.name}<button className="btn btn danger"  onClick={()=>handleDelete(tool._id)}>X</button></Card.Title>
   <ToastContainer></ToastContainer>
   <Card.Text>
+    <h6>{tool.description}</h6>
   <p> <b>Order Qurantity:</b>{tool.quantity1}</p>
   <p> <b>Available Qurantity:</b>{tool.quantity2}</p>
   <p> <b>Rating:</b>{tool.rating}</p>

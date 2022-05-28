@@ -33,33 +33,28 @@ const ALLOrder = () => {
           
      })
     }
-
     return (
-        <div className="" w-50 mx-auto>
+        <div className= "w-50 mx-auto">
             < div className="title-text">
               <h1 className="title">Add Order Purchase</h1>
               </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-<input type="text" value={admin?.name} placeholder="Enter Name" className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" value={admin?.name} placeholder="Enter Name" className="input input-bordered input-warning w-full max-w-xs mt-3"
 {...register("Name")}
 />
-<br></br><br></br>
 <input type="email" value={admin?.email} placeholder="Enter Email" className="input input-bordered input-warning w-full max-w-xs" 
 {...register("email", { required: true, maxLength: 20 })}
 
 />
-<br></br><br></br>
-<input type="number" placeholder=" Available quantity" className="input input-bordered input-warning w-full max-w-xs" 
+<input type="number" placeholder=" Available quantity" className="input input-bordered input-warning w-full max-w-xs mt-3" 
 {...register("quantity1", { required: true, maxLength: 20 })}
 
 />
-    <br></br><br></br>
-    <input type="number" placeholder="order quantity" className="input input-bordered input-warning w-full max-w-xs" 
+    <input type="number" placeholder="order quantity" className="input input-bordered input-warning w-full max-w-xs mt-3" 
 {...register("quantity2", { required: true, maxLength: 20 })}
 
 />
-<br></br><br></br>
-<select className="input input-bordered input-warning w-full max-w-xs" {...register("name")}class="select w-full max-w-xs">
+<select className="input input-bordered input-warning w-full max-w-xs mt-3" {...register("name")}>
     {
         tools.map(tool=><option key={tool._id} 
         value={tool.name} >{tool.name}
@@ -67,20 +62,27 @@ const ALLOrder = () => {
     }
     {/* <br></br><br></br> */}
     </select>
-<br></br><br></br>
-<select className="input input-bordered input-warning w-full max-w-xs" {...register("rating")}class="select w-full max-w-xs">
+<textarea type="text" placeholder="description" className="input input-bordered input-warning w-full max-w-xs mt-3" 
+{...register("description")}
+/>
+<select className="input input-bordered input-warning w-full max-w-xs mt-3" {...register("price")}>
+    {
+        tools.map(tool=><option key={tool._id} 
+        value={tool.price} >{tool.price}
+        </option>)
+    }
+    </select>
+<select className="input input-bordered input-warning w-full max-w-xs" {...register("rating")}class="select w-full max-w-xs mt-3">
     {
         tools.map(tool=><option key={tool._id} 
         value={tool.rating} >{tool.rating}
         </option>)
     }
     </select>
-    <br></br><br></br>
-    <input type="text" placeholder="photo url" className="input input-bordered input-warning w-full max-w-xs" 
+    <input type="text" placeholder="photo url" className="input input-bordered input-warning w-full max-w-xs mt-3" 
 {...register("img")}
 /> 
-<br></br><br></br>
-<button type="submit" className="btn btn-warning ">ADD</button>
+<button type="submit" className="btn btn-warning mt-3 ">ADD</button>
 </form>
         </div>
     );
