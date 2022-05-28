@@ -101,14 +101,14 @@ useEffect(()=>{
 <div className="m-5">
     <h2 className="fw-bold text-success">Please Place Order</h2>
 <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
-<input type="text" value={user?.displayName} className="input input-bordered input-warning w-full mt-3 max-w-xs"
+<input type="text" disabled value={user?.displayName} className="input input-bordered input-warning w-full mt-3 max-w-xs"
 {...register("Name")}
 />
 <input type="text" value={tools.name} className="input input-bordered input-warning  mt-3 w-full max-w-xs"
 {...register("name")}
 />
 
-<input type="email"  value={user?.email} className="input input-bordered input-warning w-full  mt-3 max-w-xs" 
+<input type="email" disabled value={user?.email} className="input input-bordered input-warning w-full  mt-3 max-w-xs" 
 {...register("email", { required: true, maxLength: 20 })}
 />
 <input type="text" placeholder="Phone Number" className="input input-bordered input-warning  mt-3 w-full max-w-xs"
