@@ -2,15 +2,17 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
 const CheckOutFrom = ({item}) => {
-    const {price,user,useremail}= item
+    const {price,user,useremail,_id}= item
     const[Carderror,setCardError] = useState('')
     const[success,setSuccess] = useState('')
+    const[translation,setTranslation] = useState('')
+    
     const stripe= useStripe()
     const element= useElements()
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(()=>{
-        fetch('https://boiling-cove-99887.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             
             headers:{
@@ -27,12 +29,11 @@ const CheckOutFrom = ({item}) => {
         if (element == null) {
             return;
           }
-      
+          const card= element.getElement(CardElement)
           const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
              card,
           })
-          
            // confirm payment
           const {paymentIntent, error: intentError} = await stripe.confirmCardPayment(
             clientSecret,
@@ -56,13 +57,29 @@ const CheckOutFrom = ({item}) => {
             }
 
             else{
+              const payment= {
+                appointment:_id,
+                transaction:paymentIntent.id
+              }
                 setCardError('')
+                setTranslation(paymentIntent.id)
                 console.log(paymentIntent)
-                setSuccess('congrats')
+                setSuccess('Congratulation')
+                fetch(`http://localhost:5000/purchase/${_id}`,{
+                  method:'PATCH',
+                  headers:{
+                    'content-type': 'application/json'  
+                  } ,
+                  
+                  body: JSON.stringify (payment)
+                }).then(res=>res.json())
+                .then(data=>{
+                  console.log(data)
+                })
             }
         
   };
-  const card= element.getElement(CardElement)
+  
     if (!stripe || !element){
         return
     } 
@@ -83,7 +100,13 @@ const CheckOutFrom = ({item}) => {
         Carderror && <p className="text-danger">{Carderror}</p>
     }
     {
-        success && <p className="text-succes">{success}</p>
+        success && <div>
+        <p className="text-warning fw-bold">{success}</p>
+        <p className="text-danger fw-bold">{translation}</p>
+
+        </div>
+        
+
     }
             </>
         </div>

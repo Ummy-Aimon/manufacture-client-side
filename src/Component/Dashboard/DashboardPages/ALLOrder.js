@@ -11,7 +11,7 @@ const ALLOrder = () => {
      return <Loading></Loading>
  }
  const onSubmit = data => {
-    const url= `https://boiling-cove-99887.herokuapp.com/order`
+    const url= `https://boiling-cove-99887.herokuapp.com/tools`
      fetch(url,{
          method: 'POST',
          headers: { 
@@ -43,10 +43,18 @@ const ALLOrder = () => {
 
 />
 <br></br><br></br>
-<select className="input input-bordered input-warning w-full max-w-xs" {...register("quantity1")}class="select w-full max-w-xs">
+<select placeholder="quantity" className="input input-bordered input-warning w-full max-w-xs" {...register("quantity1")}class="select w-full max-w-xs">
     {
         tools.map(tool=><option key={tool._id} 
         value={tool.quantity1} >{tool.quantity1}
+        </option>)
+    }
+    <br></br><br></br>
+    </select>
+    <select placeholder="quantity" className="input input-bordered input-warning w-full max-w-xs" {...register("quantity2")}class="select w-full max-w-xs">
+    {
+        tools.map(tool=><option key={tool._id} 
+        value={tool.quantity1} >{tool.quantity2}
         </option>)
     }
     </select>

@@ -81,7 +81,7 @@ const Parchase = () => {
 {...register("email", { required: true, maxLength: 20 })}
 />
 <br></br><br></br>
-<input type="number" placeholder="Phone Number" className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" placeholder="Phone Number" className="input input-bordered input-warning w-full max-w-xs"
 {...register("phone")}
 />
 <br></br><br></br>
@@ -89,7 +89,7 @@ const Parchase = () => {
 {...register("qurantity")}
 />
 <br></br><br></br>
-<input type="text" placeholder="Price" className="input input-bordered input-warning w-full max-w-xs"
+<input type="text" placeholder="Price"value={tools.price} className="input input-bordered input-warning w-full max-w-xs"
 {...register("price")}
 />
 <br></br><br></br>

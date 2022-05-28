@@ -12,7 +12,7 @@ const PurchaseRow = ({item}) => {
         <td>{qurantity}</td>
         <td>{phone}</td>
         <td>{(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button className="btn btn-primary">Pay</button></Link>}</td>
-        <td>{(price && paid) && <button className="btn btn-primary">Paid</button>}</td>
+        <td>{(price && paid) && <button className="btn btn-warning">Paid</button>}</td>
         
       </tr>
        
