@@ -9,7 +9,7 @@ const AdminPurchase = ({item}) => {
   const handleDelete =id=>{
     const procced= toast('Delete succesfully')
     if(procced){
-const url=`https://boiling-cove-99887.herokuapp.com/${id}`
+const url=`https://boiling-cove-99887.herokuapp.com/purchaseadmin/${id}`
 fetch(url,{
 method: 'DELETE',
 })
