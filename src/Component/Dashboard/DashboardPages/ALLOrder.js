@@ -43,21 +43,15 @@ const ALLOrder = () => {
 
 />
 <br></br><br></br>
-<select placeholder="quantity" className="input input-bordered input-warning w-full max-w-xs" {...register("quantity1")}class="select w-full max-w-xs">
-    {
-        tools.map(tool=><option key={tool._id} 
-        value={tool.quantity1} >{tool.quantity1}
-        </option>)
-    }
+<input type="number" placeholder=" Available quantity" className="input input-bordered input-warning w-full max-w-xs" 
+{...register("quantity1", { required: true, maxLength: 20 })}
+
+/>
     <br></br><br></br>
-    </select>
-    <select placeholder="quantity" className="input input-bordered input-warning w-full max-w-xs" {...register("quantity2")}class="select w-full max-w-xs">
-    {
-        tools.map(tool=><option key={tool._id} 
-        value={tool.quantity1} >{tool.quantity2}
-        </option>)
-    }
-    </select>
+    <input type="number" placeholder="order quantity" className="input input-bordered input-warning w-full max-w-xs" 
+{...register("quantity2", { required: true, maxLength: 20 })}
+
+/>
 <br></br><br></br>
 <select className="input input-bordered input-warning w-full max-w-xs" {...register("name")}class="select w-full max-w-xs">
     {
@@ -65,8 +59,17 @@ const ALLOrder = () => {
         value={tool.name} >{tool.name}
         </option>)
     }
-    <br></br><br></br>
+    {/* <br></br><br></br> */}
     </select>
+<br></br><br></br>
+<select className="input input-bordered input-warning w-full max-w-xs" {...register("rating")}class="select w-full max-w-xs">
+    {
+        tools.map(tool=><option key={tool._id} 
+        value={tool.rating} >{tool.rating}
+        </option>)
+    }
+    </select>
+    <br></br><br></br>
     <input type="text" placeholder="photo url" className="input input-bordered input-warning w-full max-w-xs" 
 {...register("img")}
 /> 
