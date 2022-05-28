@@ -65,7 +65,7 @@ const CheckOutFrom = ({item}) => {
                 setTranslation(paymentIntent.id)
                 console.log(paymentIntent)
                 setSuccess('Congratulation')
-                fetch(`https://boiling-cove-99887.herokuapp.com/${_id}`,{
+                fetch(`https://boiling-cove-99887.herokuapp.com/purchase/${_id}`,{
                   method:'PATCH',
                   headers:{
                     'content-type': 'application/json'  
