@@ -1,27 +1,25 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {  Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase-init';
 import './ManageOrder.css'
 
-
-
 const ManageOrder = () => {
   const[user]= useAuthState(auth)
-  const[items,setItem]=useState([])
+  const[tools,setTool]=useState([])
   const handleDelete =id=>{
     const procced= window.confirm('Are You Sure?')
     if(procced){
-const url=`https://boiling-cove-99887.herokuapp.com/order/${id}`
+const url=`https://boiling-cove-99887.herokuapp.com/tools/${id}`
 fetch(url,{
 method: 'DELETE',
 })
 .then(res=>res.json())
 .then(data=>{
 console.log(data)
-const del= items.filter(item=>item._id!==id)
-setItem(del)
+const del= tools.filter(tool=>tool._id!==id)
+setTool(del)
 
 })
 }
@@ -29,43 +27,39 @@ setItem(del)
   useEffect(()=>{
   const getItem = async()=>{
          const url=
- `https://boiling-cove-99887.herokuapp.com:5000/tools`
+ `https://boiling-cove-99887.herokuapp.com/tools`
  const{data}= await axios.get(url)
- setItem(data)
+ setTool(data)
   }
   getItem()
      },[user])
-        return (
-          <div>
+     return(
+     <div>
+       <div className="title-text">
 <h1 className="mt-3 text-warning fw-bold text-center">Manage order</h1> 
-<div className="w-50 text-center">
+</div>
+<div className="content">
 {
-    items.map(item=><div key={item._id}>
-      <div className="content">
-<Card className="mx-auto d-block jutify-content-cente mt-5" style={{ width: '18rem' }}>
-  
-<Card.Img className="w-50" variant="top" src={item.img} />
-<Card.Body>
-<Card.Title>{item.name}<button className="btn btn danger"  onClick={()=>handleDelete(item._id)}>X</button></Card.Title>
-<Card.Text>
-email:{item.email}
-<p> <b>Qurantity:</b>{item.quantity1}</p>
-<p> <b>Qurantity:</b>{item.quantity2}</p>
-<p> <b>Qurantity:</b>{item.rating}</p>
-<p> <b>Qurantity:</b>{item.price}</p>
-<p> <b>Qurantity:</b>{item.rating}</p>
-</Card.Text>
-
-</Card.Body>
+      tools.map(tool=><div key={tool._id}>
+      
+  <Card className="mx-auto d-block jutify-content-center mt-5" style={{ width: '18rem' }}>
+   
+  <Card.Img className="w-50" variant="top" src={tool.img} />
+  <Card.Body>
+  <Card.Title>{tool.name}<button className="btn btn danger"  onClick={()=>handleDelete(tool._id)}>X</button></Card.Title>
+  <Card.Text>
+  <p> <b>Order Qurantity:</b>{tool.quantity1}</p>
+  <p> <b>Available Qurantity:</b>{tool.quantity2}</p>
+  <p> <b>Rating:</b>{tool.rating}</p>
+  <p> <b>Price:</b>${tool.price}</p>
+  </Card.Text>
+  </Card.Body>
 </Card>
 </div>
-    </div>)
-}
-</div>
-</div> 
-  );
+ )};
+ </div>
+  </div>
+     )
+    }
 
-}     
-       
-    
-export default ManageOrder;
+    export default ManageOrder

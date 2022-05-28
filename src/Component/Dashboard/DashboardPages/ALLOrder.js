@@ -2,9 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import Loading from '../../Loading/Loading';
-import auth from '../../firebase-init';
-import UseAdmin from '../UseHook/UseAdmin';
+// import auth from '../../firebase-init';
+// import UseAdmin from '../UseHook/UseAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import UseAdmin from '../../UseHook/UseAdmin';
+import auth from '../../../firebase-init';
 
 const ALLOrder = () => {
     const { register, handleSubmit } = useForm();
